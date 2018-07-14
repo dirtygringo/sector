@@ -6,6 +6,6 @@ namespace NM.SharedKernel.Infrastructure.Domain
     public interface IRepository<TAggregateRoot> where TAggregateRoot: AggregateRoot
     {
         Task SaveAsync(TAggregateRoot aggregate);
-        TAggregateRoot FindAsync(Guid aggregateId);
+        Task<TAggregateRoot> FindAsync(Guid aggregateId);
     }
 }
