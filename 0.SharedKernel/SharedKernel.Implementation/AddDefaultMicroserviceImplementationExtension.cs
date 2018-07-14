@@ -9,7 +9,7 @@ using NM.SharedKernel.Infrastructure.Query;
 
 namespace NM.SharedKernel.Implementation
 {
-    public static class AddDefaultImplementationModuleExtension
+    public static class AddDefaultMicroserviceImplementationExtension
     {
         public static IServiceCollection AddDefaultMicroserviceImplementation(this IServiceCollection services)
         {
@@ -19,7 +19,7 @@ namespace NM.SharedKernel.Implementation
                 .AddSingleton(typeof(IEventStorageFactory<>), typeof(EventStorageFactory<>))
                 .AddSingleton(typeof(IQueryStorageFactory<>), typeof(QueryStorageFactory<>))
                 .AddTransient(typeof(IRepository<>), typeof(Repository<>));
-
+            return services;
         }
     }
 }
