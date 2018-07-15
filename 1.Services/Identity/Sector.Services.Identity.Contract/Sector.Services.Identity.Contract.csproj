@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>NM.Sector.Services.Identity.Contract</AssemblyName>
+    <RootNamespace>NM.Sector.Services.Identity.Contract</RootNamespace>
+  </PropertyGroup>
+
+</Project>
