@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Infrastructure.Guards;
 
-namespace NM.Sector.Services.Identity.Infrastructure.Token
+namespace NM.Sector.Services.Identity.Security.Token
 {
     internal class JsonWebTokenFactory : IJsonWebTokenFactory
     {

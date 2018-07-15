@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.IdentityModel.Tokens;
 
-namespace NM.Sector.Services.Identity.Infrastructure.Token
+namespace NM.Sector.Services.Identity.Security.Token
 {
     internal class TokenSettings
     {

@@ -1,4 +1,4 @@
-﻿namespace NM.Sector.Services.Identity.Infrastructure.Policy
+﻿namespace NM.Sector.Services.Identity.Security.Policy
 {
     internal static class IdentityPolicy
     {

@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using NM.Sector.Services.Identity.Infrastructure.Policy;
-using NM.Sector.Services.Identity.Infrastructure.Token;
+using NM.Sector.Services.Identity.Security.Policy;
+using NM.Sector.Services.Identity.Security.Token;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Implementation;
 
@@ -38,6 +38,7 @@ namespace NM.Sector.Services.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddDefaultMicroserviceImplementation();
 
             services.AddSingleton(_configuration);

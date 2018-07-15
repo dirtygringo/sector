@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using Newtonsoft.Json;
 
-namespace NM.Sector.Services.Identity.Infrastructure.Token
+namespace NM.Sector.Services.Identity.Security.Token
 {
     public interface IJsonWebTokenFactory
     {
