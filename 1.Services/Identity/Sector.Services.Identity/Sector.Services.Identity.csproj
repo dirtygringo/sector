@@ -16,7 +16,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Common\SharedKernel.Common.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Implementation\SharedKernel.Implementation.csproj" />
     <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Infrastructure\SharedKernel.Infrastructure.csproj" />
+    <ProjectReference Include="..\Sector.Services.Identity.Contract\Sector.Services.Identity.Contract.csproj" />
   </ItemGroup>
 
 </Project>

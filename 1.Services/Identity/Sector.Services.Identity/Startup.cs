@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using NM.Sector.Services.Identity.Infrastructure.Policy;
 using NM.Sector.Services.Identity.Infrastructure.Token;
 using NM.SharedKernel.Common.Claims;
+using NM.SharedKernel.Implementation;
 
 namespace NM.Sector.Services.Identity
 {
@@ -37,6 +38,7 @@ namespace NM.Sector.Services.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDefaultMicroserviceImplementation();
 
             services.AddSingleton(_configuration);
             services.AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();

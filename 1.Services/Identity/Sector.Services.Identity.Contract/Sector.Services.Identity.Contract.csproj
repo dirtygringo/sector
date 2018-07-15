@@ -6,4 +6,8 @@
     <RootNamespace>NM.Sector.Services.Identity.Contract</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Infrastructure\SharedKernel.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
