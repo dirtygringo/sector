@@ -10,11 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NM.Sector.Services.Identity.Contract.Commands;
 using NM.Sector.Services.Identity.Contract.Events;
+using NM.Sector.Services.Identity.Handlers.Command;
+using NM.Sector.Services.Identity.Handlers.Event;
 using NM.Sector.Services.Identity.Security.Policy;
 using NM.Sector.Services.Identity.Security.Token;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Implementation;
 using NM.SharedKernel.Implementation.Bus;
+using NM.SharedKernel.Infrastructure.Processes;
 
 namespace NM.Sector.Services.Identity
 {
@@ -44,10 +47,11 @@ namespace NM.Sector.Services.Identity
 
             services
                 .AddSingleton(_configuration)
+                .AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
+
+            services
                 .AddDefaultMicroserviceImplementation()
                 .AddRabbitMq(_configuration);
-
-            services.AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
 
             var tokenSettings = _configuration.GetSection(nameof(TokenSettings)).Get<TokenSettings>();
 
@@ -125,6 +129,9 @@ namespace NM.Sector.Services.Identity
                         }
                     };
                 });
+
+            services.AddTransient<IMessageHandler<CreateUser>, CreateUserHandler>();
+            services.AddTransient<IMessageHandler<UserCreated>, UserCreatedHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
