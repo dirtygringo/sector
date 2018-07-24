@@ -5,6 +5,6 @@ namespace NM.SharedKernel.Infrastructure.Processes
 {
     public interface ISender
     {
-        Task SendAsync<TCommand>(TCommand command) where TCommand : ICommand;
+        Task SendAsync<TCommand>(TCommand command) where TCommand : class, ICommand;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NM.SharedKernel.Implementation.Domain;
-using NM.SharedKernel.Implementation.StorageFactory;
+using NM.SharedKernel.Implementation.Storages;
 using NM.SharedKernel.Infrastructure.Domain;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Query;

@@ -1,7 +1,7 @@
 ﻿using System;
 using NM.SharedKernel.Infrastructure.Query;
 
-namespace NM.SharedKernel.Implementation.StorageFactory
+namespace NM.SharedKernel.Implementation.Storages
 {
     internal class QueryStorageFactory<TQueryEntity> : IQueryStorageFactory<TQueryEntity> where TQueryEntity : class, IQueryEntity
     {

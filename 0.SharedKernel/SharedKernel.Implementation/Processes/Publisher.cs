@@ -26,7 +26,7 @@ namespace NM.SharedKernel.Implementation.Processes
 
         #region Methods
 
-        public Task PublishAsync<TEvent>(TEvent @event) where TEvent : IEvent
+        public Task PublishAsync<TEvent>(TEvent @event) where TEvent : class, IEvent
         {
             if(@event == null) throw new ArgumentException("Event cannot be null.");
 

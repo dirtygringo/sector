@@ -26,7 +26,7 @@ namespace NM.SharedKernel.Implementation.Processes
 
         #region Methods
 
-        public Task SendAsync<TCommand>(TCommand command) where TCommand : ICommand
+        public Task SendAsync<TCommand>(TCommand command) where TCommand : class, ICommand
         {
             if(command == null) throw new ArgumentException("Command cannot be null.");
             var handlers = _serviceProvider.GetServices<IMessageHandler<TCommand>>().ToArray();
