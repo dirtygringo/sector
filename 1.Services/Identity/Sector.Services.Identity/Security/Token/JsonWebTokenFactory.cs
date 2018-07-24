@@ -43,8 +43,8 @@ namespace NM.Sector.Services.Identity.Security.Token
 
         public ClaimsIdentity GenerateClaimsIdentity(Guid id, string email)
         {
-            Guards.GuidCannotBeNullOrEmpty(id, nameof(id));
-            Guards.StringCannotBeNullWhiteSpaceOrEmpty(email, nameof(email));
+            Preconditions.CheckNullOrEmpty(id, nameof(id));
+            Preconditions.CheckNullEmptyWhitespace(email, nameof(email));
 
             return new ClaimsIdentity(new GenericIdentity(email, "Token"), new[]
             {

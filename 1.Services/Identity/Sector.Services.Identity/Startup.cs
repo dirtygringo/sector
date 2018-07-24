@@ -8,10 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using NM.Sector.Services.Identity.Contract.Commands;
+using NM.Sector.Services.Identity.Contract.Events;
 using NM.Sector.Services.Identity.Security.Policy;
 using NM.Sector.Services.Identity.Security.Token;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Implementation;
+using NM.SharedKernel.Implementation.Bus;
 
 namespace NM.Sector.Services.Identity
 {
@@ -39,9 +42,11 @@ namespace NM.Sector.Services.Identity
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDefaultMicroserviceImplementation();
+            services
+                .AddSingleton(_configuration)
+                .AddDefaultMicroserviceImplementation()
+                .AddRabbitMq(_configuration);
 
-            services.AddSingleton(_configuration);
             services.AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
 
             var tokenSettings = _configuration.GetSection(nameof(TokenSettings)).Get<TokenSettings>();
@@ -141,7 +146,12 @@ namespace NM.Sector.Services.Identity
                         .AllowCredentials())
                 .UseAuthentication()
                 .UseHttpsRedirection()
-                .UseMvc();
+                .UseMvc()
+                .UseRabbitMq(config =>
+                {
+                    config.SubscribeToCommand<CreateUser>();
+                    config.SubscribeToEvent<UserCreated>();
+                });
         }
 
         #endregion

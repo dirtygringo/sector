@@ -47,7 +47,7 @@ namespace NM.Sector.Services.Identity.Domain
         public static UserAggregate Create(Guid aggregateId, string firstName, string lastName, string email,
             string password)
         {
-            Guards.StringCannotBeNullWhiteSpaceOrEmpty(password, nameof(password));
+            Preconditions.CheckNullEmptyWhitespace(password, nameof(password));
 
             CreatePasswordHash(password, out string passwordHash, out string passwordSalt);
             return new UserAggregate(aggregateId, firstName, lastName, email, passwordHash, passwordSalt);
@@ -59,7 +59,7 @@ namespace NM.Sector.Services.Identity.Domain
 
         private static void CreatePasswordHash(string password, out string passwordHash, out string passwordSalt)
         {
-            Guards.StringCannotBeNullWhiteSpaceOrEmpty(password, nameof(password));
+            Preconditions.CheckNullEmptyWhitespace(password, nameof(password));
 
             using (var hmac = new HMACSHA256())
             {
