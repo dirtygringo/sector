@@ -20,15 +20,18 @@ namespace NM.SharedKernel.Implementation.Bus
             services
                 .AddSingleton<IPublisher, Publisher>()
                 .AddSingleton<ISender, Sender>()
-                .AddTransient<IBus>(_ => RabbitHutch.CreateBus(rabbitMq.Hostname,
-                    rabbitMq.Port,
-                    rabbitMq.VirtualHost,
-                    rabbitMq.Username,
-                    rabbitMq.Password,
-                    rabbitMq.RequestedHeartbeat,
+                .AddTransient<IBus>(serviceProvider =>
+                    RabbitHutch.CreateBus(
+                        rabbitMq.Hostname,
+                        rabbitMq.Port,
+                        rabbitMq.VirtualHost,
+                        rabbitMq.Username,
+                        rabbitMq.Password,
+                        rabbitMq.RequestedHeartbeat,
                     register => { }))
                 .AddTransient<IBusClient, RabbitMqBus>()
-                .AddSingleton<IBusConfiguration, RabbitMqConfiguration>();
+                .AddTransient<IBusConfiguration, RabbitMqConfiguration>()
+                .AddSingleton<RabbitMqListener>();
 
             return services;
         }

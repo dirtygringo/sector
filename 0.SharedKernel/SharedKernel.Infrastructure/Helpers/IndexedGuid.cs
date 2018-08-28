@@ -6,8 +6,6 @@ namespace NM.SharedKernel.Infrastructure.Helpers
     {
         #region Fields
 
-        private static Func<Guid> _generator = _generatorCore;
-
         private static readonly Func<Guid> _generatorCore = () =>
         {
             var destinationArray = Guid.NewGuid().ToByteArray();
@@ -23,6 +21,8 @@ namespace NM.SharedKernel.Infrastructure.Helpers
             Array.Copy(array, array.Length - 4, destinationArray, destinationArray.Length - 4, 4);
             return new Guid(destinationArray);
         };
+
+        private static Func<Guid> _generator = _generatorCore;
 
         #endregion
 

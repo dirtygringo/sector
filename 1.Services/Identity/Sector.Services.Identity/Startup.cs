@@ -50,7 +50,7 @@ namespace NM.Sector.Services.Identity
                 .AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
 
             services
-                .AddDefaultMicroserviceImplementation()
+                .AddInfrastructure()
                 .AddRabbitMq(_configuration);
 
             var tokenSettings = _configuration.GetSection(nameof(TokenSettings)).Get<TokenSettings>();

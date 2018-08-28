@@ -3,14 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NM.Sector.Services.Identity.Contract.Commands;
+using NM.SharedKernel.Infrastructure.Bus;
 
 namespace Sector.Services.Identity.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class AccountController : ControllerBase
     {
-        // GET api/values
+        #region Fields
+
+        private readonly IBusClient _bus;
+
+        #endregion
+
+        #region Constructor
+
+        public AccountController(IBusClient bus)
+        {
+            _bus = bus;
+        }
+
+        #endregion
+
+        #region Actions
+
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -24,10 +42,12 @@ namespace Sector.Services.Identity.Controllers
             return "value";
         }
 
-        // POST api/values
+        // POST api/account/string
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Register([FromBody] string value)
         {
+            await _bus.SendAsync(new CreateUser("Mika", "Mikic", "mika.mikic@gmail.com", "mikamikic"));
+            return Ok();
         }
 
         // PUT api/values/5
@@ -36,10 +56,11 @@ namespace Sector.Services.Identity.Controllers
         {
         }
 
-        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
         }
+
+        #endregion
     }
 }

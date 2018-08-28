@@ -25,8 +25,7 @@ namespace NM.SharedKernel.Implementation.Bus
 
         #region Constructor
 
-        public RabbitMqConfiguration(ILogger<RabbitMqConfiguration> logger, IBus bus, IPublisher publisher, ISender sender
-            )
+        public RabbitMqConfiguration(ILogger<RabbitMqConfiguration> logger, IBus bus, IPublisher publisher, ISender sender)
         {
             _logger = logger;
             _bus = bus;
