@@ -7,7 +7,7 @@ using NM.SharedKernel.Infrastructure.Query;
 
 namespace NM.SharedKernel.Implementation
 {
-    public static class AddInfrastructureExtension
+    public static class InfrastructureModule
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {

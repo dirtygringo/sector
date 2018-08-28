@@ -19,7 +19,7 @@ namespace NM.Sector.Services.Identity.Handlers.Command
 
         #region Constructor
 
-        public CreateUserHandler(ILogger logger, IRepository<UserAggregate> repository)
+        public CreateUserHandler(ILogger<CreateUserHandler> logger, IRepository<UserAggregate> repository)
         {
             _logger = logger;
             _repository = repository;

@@ -27,7 +27,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
                     {
                         Type = e.GetType(),
                         TypeName = e.GetType().Name,
-                        EventHeaders = new Dictionary<string, object> { { "EventClrType", e.GetType().AssemblyQualifiedName } },
+                        EventHeaders = new Dictionary<string, object> { { "EventClrType", e.GetType().FullName } },
                         Data = JsonConvert.SerializeObject(e, _serializerSettings),
                         Version = version
                     });
@@ -59,7 +59,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
                     {
                         Type = e.GetType(),
                         TypeName = e.GetType().Name,
-                        EventHeaders = new Dictionary<string, object> { { "EventClrType", e.GetType().AssemblyQualifiedName } },
+                        EventHeaders = new Dictionary<string, object> { { "EventClrType", e.GetType().FullName } },
                         Data = JsonConvert.SerializeObject(e, _serializerSettings),
                         Version = version
                     });

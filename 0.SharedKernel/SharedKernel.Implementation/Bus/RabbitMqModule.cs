@@ -10,7 +10,7 @@ using NM.SharedKernel.Infrastructure.Processes;
 
 namespace NM.SharedKernel.Implementation.Bus
 {
-    public static class RabbitMqExtensions
+    public static class RabbitMqModule
     {
         internal static RabbitMqListener Listener { get; set; }
 
