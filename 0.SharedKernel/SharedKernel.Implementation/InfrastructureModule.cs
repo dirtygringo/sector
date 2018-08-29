@@ -14,7 +14,10 @@ namespace NM.SharedKernel.Implementation
             services
                 .AddSingleton(typeof(IEventStorageFactory<>), typeof(EventStorageFactory<>))
                 .AddSingleton(typeof(IQueryStorageFactory<>), typeof(QueryStorageFactory<>))
+                .AddTransient(typeof(IEventStorage<>),typeof(EventStorage<>))
                 .AddTransient(typeof(IRepository<>), typeof(Repository<>));
+
+
             return services;
         }
     }

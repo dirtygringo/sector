@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Messages;
 
-namespace NM.SharedKernel.Infrastructure.EventSourcing
+namespace NM.SharedKernel.Implementation.Storages
 {
-    public static class EventDataExtensions
+    internal static class EventDataExtensions
     {
         #region Fields
 
@@ -15,7 +16,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
 
         #region ExtensionMethods
 
-        public static EventData ToEventData<TEventSourced>(this TEventSourced source) where TEventSourced : class, IEventSourced
+        internal static EventData ToEventData<TEventSourced>(this TEventSourced source) where TEventSourced : class, IEventSourced
         {
             var list = new List<EventMetadata>();
             var version = source.Version;
@@ -38,7 +39,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
             return new EventData(source.Id, JsonConvert.SerializeObject(list, _serializerSettings), DateTime.Now);
         }
 
-        public static IEnumerable<IDomainEvent> DeserializeEvents(this EventData eventData)
+        internal static IEnumerable<IDomainEvent> DeserializeEvents(this EventData eventData)
         {
             foreach (var meta in Deserialize(eventData.Events))
             {
@@ -46,7 +47,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
             }
         }
 
-        public static void AppendEvents<TEventSourced>(this EventData eventData, TEventSourced source) where TEventSourced : class, IEventSourced
+        internal static void AppendEvents<TEventSourced>(this EventData eventData, TEventSourced source) where TEventSourced : class, IEventSourced
         {
             var currentEventList = Deserialize(eventData.Events);
             var version = source.Version;
@@ -64,7 +65,7 @@ namespace NM.SharedKernel.Infrastructure.EventSourcing
                         Version = version
                     });
             }
-            eventData.SetEvents(JsonConvert.SerializeObject(currentEventList, _serializerSettings));
+            eventData.Events = JsonConvert.SerializeObject(currentEventList, _serializerSettings);
         }
 
         private static List<EventMetadata> Deserialize(string events)
