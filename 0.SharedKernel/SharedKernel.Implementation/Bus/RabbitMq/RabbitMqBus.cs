@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 using NM.SharedKernel.Infrastructure.Bus;
 using NM.SharedKernel.Infrastructure.Messages;
 
-namespace NM.SharedKernel.Implementation.RabbitMq
+namespace NM.SharedKernel.Implementation.Bus.RabbitMq
 {
     internal class RabbitMqBus : IBusClient
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using NM.SharedKernel.Infrastructure.Bus;
 
-namespace NM.SharedKernel.Implementation.RabbitMq
+namespace NM.SharedKernel.Implementation.Bus.RabbitMq
 {
     internal class RabbitMqListener
     {
