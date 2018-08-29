@@ -17,6 +17,7 @@ using NM.Sector.Services.Identity.Security.Token;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Implementation;
 using NM.SharedKernel.Implementation.Bus;
+using NM.SharedKernel.Implementation.Storages.Mongo;
 using NM.SharedKernel.Infrastructure.Processes;
 
 namespace NM.Sector.Services.Identity
@@ -46,12 +47,9 @@ namespace NM.Sector.Services.Identity
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services
+                .AddOptions()
                 .AddSingleton(_configuration)
                 .AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
-
-            services
-                .AddInfrastructure()
-                .AddRabbitMq(_configuration);
 
             var tokenSettings = _configuration.GetSection(nameof(TokenSettings)).Get<TokenSettings>();
 
@@ -130,6 +128,11 @@ namespace NM.Sector.Services.Identity
                     };
                 });
 
+            services
+                .AddInfrastructure()
+                .AddRabbitMq(_configuration)
+                .AddMongoDb(_configuration);
+
             services.AddTransient<IMessageHandler<CreateUser>, CreateUserHandler>();
             services.AddTransient<IMessageHandler<UserCreated>, UserCreatedHandler>();
         }
@@ -158,7 +161,8 @@ namespace NM.Sector.Services.Identity
                 {
                     config.SubscribeToCommand<CreateUser>();
                     config.SubscribeToEvent<UserCreated>();
-                });
+                })
+                .UseMongoDb();
         }
 
         #endregion

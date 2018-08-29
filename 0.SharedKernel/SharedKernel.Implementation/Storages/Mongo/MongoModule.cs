@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
 namespace NM.SharedKernel.Implementation.Storages.Mongo
@@ -8,17 +10,36 @@ namespace NM.SharedKernel.Implementation.Storages.Mongo
     {
         public static IServiceCollection AddMongoDb(this IServiceCollection services, IConfiguration configuration)
         {
-            var mongoOptions = configuration.GetSection(nameof(MongoOptions)).Get<MongoOptions>();
-            services.AddSingleton<MongoClient>(c => new MongoClient(mongoOptions.ConnectionString));
-            services.AddScoped<IMongoDatabase>(c =>
+            services.Configure<MongoOptions>(options =>
             {
-                var client = c.GetService<MongoClient>();
-                return client.GetDatabase(mongoOptions.Database);
+                var mongoOptions = configuration.GetSection(nameof(MongoOptions)).Get<MongoOptions>();
+                options.ConnectionString = mongoOptions.ConnectionString;
+                options.Database = mongoOptions.Database;
+                options.Seed = mongoOptions.Seed;
             });
-            services.AddScoped<IDatabaseInitializer, MongoDatabaseInitializer>();
-            services.AddScoped<IDatabaseSeeder, MongoDatabaseSeeder>();
+
+            services.AddSingleton<MongoClient>(c =>
+            {
+                var mongoOptions = c.GetService<IOptions<MongoOptions>>();
+                var client = new MongoClient(mongoOptions.Value.ConnectionString);
+                return client;
+            });
+            services.AddTransient<IMongoDatabase>(c =>
+            {
+                var mongoOptions = c.GetService<IOptions<MongoOptions>>();
+                var client = c.GetService<MongoClient>();
+                return client.GetDatabase(mongoOptions.Value.Database);
+            });
+            services.AddTransient<IDatabaseInitializer, MongoDatabaseInitializer>();
+            services.AddTransient<IDatabaseSeeder, MongoDatabaseSeeder>();
 
             return services;
+        }
+
+        public static IApplicationBuilder UseMongoDb(this IApplicationBuilder app)
+        {
+            app.ApplicationServices.GetService<IDatabaseInitializer>().InitializeAsync();
+            return app;
         }
     }
 }

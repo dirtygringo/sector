@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NM.Sector.Services.Identity.Contract.Commands;
 using NM.SharedKernel.Infrastructure.Bus;
 
-namespace Sector.Services.Identity.Controllers
+namespace NM.Sector.Services.Identity.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -44,7 +44,7 @@ namespace Sector.Services.Identity.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody] string value)
         {
-            await _bus.SendAsync(new CreateUser("Mika", "Mikic", "mika.mikic@gmail.com", "mikamikic"));
+            await _bus.SendAsync(new CreateUser("Pera", "Lazic", "pera.lazic@gmail.com", "peralazic"));
             return Ok();
         }
 

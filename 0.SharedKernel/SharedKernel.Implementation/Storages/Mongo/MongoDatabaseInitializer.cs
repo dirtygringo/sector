@@ -39,7 +39,7 @@ namespace NM.SharedKernel.Implementation.Storages.Mongo
             await _seeder.SeedAsync();
         }
 
-        private void RegisterConventions()
+        private static void RegisterConventions()
         {
             ConventionRegistry.Register("SecotrConventions", new MongoConvention(), x => true);
         }
