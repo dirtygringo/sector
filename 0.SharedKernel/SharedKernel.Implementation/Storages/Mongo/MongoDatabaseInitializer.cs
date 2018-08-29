@@ -41,7 +41,7 @@ namespace NM.SharedKernel.Implementation.Storages.Mongo
 
         private static void RegisterConventions()
         {
-            ConventionRegistry.Register("SecotrConventions", new MongoConvention(), x => true);
+            ConventionRegistry.Register("SectorConventions", new MongoConvention(), x => true);
         }
 
         #endregion
