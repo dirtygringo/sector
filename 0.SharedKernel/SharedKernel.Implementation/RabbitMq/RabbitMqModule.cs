@@ -8,7 +8,7 @@ using NM.SharedKernel.Implementation.Processes;
 using NM.SharedKernel.Infrastructure.Bus;
 using NM.SharedKernel.Infrastructure.Processes;
 
-namespace NM.SharedKernel.Implementation.Bus
+namespace NM.SharedKernel.Implementation.RabbitMq
 {
     public static class RabbitMqModule
     {

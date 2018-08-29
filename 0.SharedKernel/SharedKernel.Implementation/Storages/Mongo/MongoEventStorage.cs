@@ -9,9 +9,9 @@ using NM.SharedKernel.Infrastructure.Bus;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Messages;
 
-namespace NM.SharedKernel.Implementation.Storages
+namespace NM.SharedKernel.Implementation.Storages.Mongo
 {
-    internal class EventStorage<TEventSourced> : IEventStorage<TEventSourced> where TEventSourced : class, IEventSourced
+    internal class MongoEventStorage<TEventSourced> : IEventStorage<TEventSourced> where TEventSourced : class, IEventSourced
     {
         #region Fields
 
@@ -24,7 +24,7 @@ namespace NM.SharedKernel.Implementation.Storages
 
         #region Constructor
 
-        public EventStorage(ILogger<EventStorage<TEventSourced>> logger, IMongoDatabase database, IBusClient bus)
+        public MongoEventStorage(ILogger<MongoEventStorage<TEventSourced>> logger, IMongoDatabase database, IBusClient bus)
         {
             _logger = logger;
             _database = database;
@@ -129,7 +129,7 @@ namespace NM.SharedKernel.Implementation.Storages
             _disposed = true;
         }
 
-        ~EventStorage()
+        ~MongoEventStorage()
         {
             Dispose(false);
         }

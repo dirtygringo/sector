@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NM.SharedKernel.Implementation.Domain;
 using NM.SharedKernel.Implementation.Storages;
+using NM.SharedKernel.Implementation.Storages.Mongo;
 using NM.SharedKernel.Infrastructure.Domain;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Query;
@@ -14,7 +15,7 @@ namespace NM.SharedKernel.Implementation
             services
                 .AddSingleton(typeof(IEventStorageFactory<>), typeof(EventStorageFactory<>))
                 .AddSingleton(typeof(IQueryStorageFactory<>), typeof(QueryStorageFactory<>))
-                .AddTransient(typeof(IEventStorage<>),typeof(EventStorage<>))
+                .AddTransient(typeof(IEventStorage<>),typeof(MongoEventStorage<>))
                 .AddTransient(typeof(IRepository<>), typeof(Repository<>));
 
 

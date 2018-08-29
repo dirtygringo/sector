@@ -16,7 +16,7 @@ using NM.Sector.Services.Identity.Security.Policy;
 using NM.Sector.Services.Identity.Security.Token;
 using NM.SharedKernel.Common.Claims;
 using NM.SharedKernel.Implementation;
-using NM.SharedKernel.Implementation.Bus;
+using NM.SharedKernel.Implementation.RabbitMq;
 using NM.SharedKernel.Implementation.Storages.Mongo;
 using NM.SharedKernel.Infrastructure.Processes;
 

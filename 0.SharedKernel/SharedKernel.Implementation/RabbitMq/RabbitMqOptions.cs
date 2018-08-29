@@ -1,4 +1,4 @@
-﻿namespace NM.SharedKernel.Implementation.Bus
+﻿namespace NM.SharedKernel.Implementation.RabbitMq
 {
     internal class RabbitMqOptions
     {

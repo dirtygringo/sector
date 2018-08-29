@@ -6,7 +6,7 @@ using NM.SharedKernel.Infrastructure.Bus;
 using NM.SharedKernel.Infrastructure.Messages;
 using NM.SharedKernel.Infrastructure.Processes;
 
-namespace NM.SharedKernel.Implementation.Bus
+namespace NM.SharedKernel.Implementation.RabbitMq
 {
     internal class RabbitMqConfiguration : IBusConfiguration
     {
