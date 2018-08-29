@@ -5,7 +5,9 @@ namespace NM.SharedKernel.Implementation.Storages
     internal class EventData
     {
         #region Constructor
-        
+
+        protected EventData() { }
+
         public EventData(Guid aggregateId, string events, DateTime created)
         {
             AggregateId = aggregateId;
