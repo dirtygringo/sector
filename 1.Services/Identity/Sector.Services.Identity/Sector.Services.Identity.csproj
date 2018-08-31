@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>NM.Sector.Services.Identity</AssemblyName>
     <RootNamespace>NM.Sector.Services.Identity</RootNamespace>
+    <DockerTargetOS>Linux</DockerTargetOS>
+    <UserSecretsId>006b34e0-a673-4a07-b2d0-a0213ec9d104</UserSecretsId>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
   </ItemGroup>
 
   <ItemGroup>
