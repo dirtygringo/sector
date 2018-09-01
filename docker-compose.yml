@@ -2,16 +2,13 @@ version: '3.4'
 
 services:
   sector.services.identity:
-    image: sector.identity:${TAG:-latest}
+    image: sector.services.identity:${TAG:-latest}
     build:
       context: .
       dockerfile: 1.Services/Identity/Sector.Services.Identity/Dockerfile
-    depends_on:
-      - sector.mongo
-      - sector.rabbitmq
 
   sector.rabbitmq:
     image: rabbitmq:3-management
 
-  sector.mongo:
+  sector.mongodb:
     image: mongo:${TAG:-latest}

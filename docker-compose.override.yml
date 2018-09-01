@@ -1,23 +1,53 @@
 version: '3.4'
 
+networks:
+  sector.network:
+    driver: bridge
+
 services:
   sector.services.identity:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:44364;http://+:59647
       - ASPNETCORE_HTTPS_PORT=44364
+    container_name: sector.identity
+    restart: always
     ports:
       - "59647:59647"
       - "44364:44364"
+    networks:
+      sector.network:
+        aliases:
+          - sector.identity.com
     volumes:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+    depends_on:
+      - sector.mongodb
+      - sector.rabbitmq
+    expose:
+      - "44364"
+      - "59647"
+  
 
   sector.rabbitmq:
+    container_name: sector.rabbitmq
+    restart: always
     ports:
       - "15672:15672"  # Important: In a production environment your should remove the external port
       - "5672:5672"    # Important: In a production environment your should remove the external port
+    networks:
+      sector.network:
+        aliases:
+          - sector.rabbitmq.com
 
-  sector.mongo:
+
+  sector.mongodb:
+    container_name: sector.mongodb
+    restart: always
     ports:
       - "27017:27017"  # Important: In a production environment your should remove the external port
+    networks:
+      sector.network:
+        aliases:
+          - sector.mongodb.com
