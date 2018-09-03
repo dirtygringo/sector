@@ -21,4 +21,4 @@ RUN dotnet publish "Sector.Services.Identity.csproj" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "NM.Sector.Services.IdenStity.dll"]
+ENTRYPOINT ["dotnet", "NM.Sector.Services.Identity.dll"]
