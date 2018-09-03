@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.6'
 
 networks:
   sector.network:
@@ -8,13 +8,16 @@ services:
   sector.services.identity:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:44364;http://+:59647
-      - ASPNETCORE_HTTPS_PORT=44364
+      - ASPNETCORE_URLS=http://+:59647
+#     - ASPNETCORE_URLS=https://+:44364;http://+:59647
+#      - ASPNETCORE_HTTPS_PORT=44364
+
     container_name: sector.identity
     restart: always
     ports:
       - "59647:59647"
-      - "44364:44364"
+#     - "44364:44364"
+
     networks:
       sector.network:
         aliases:
@@ -26,7 +29,6 @@ services:
       - sector.mongodb
       - sector.rabbitmq
     expose:
-      - "44364"
       - "59647"
   
 
