@@ -4,8 +4,8 @@ services:
   sector.services.identity:
     image: sector.services.identity:${TAG:-latest}
     build:
-      context: .
-      dockerfile: src/1.Services/Identity/Sector.Services.Identity/Dockerfile
+      context: ./src/1.Services/Identity/Sector.Services.Identity
+      dockerfile: Dockerfile
 
   sector.rabbitmq:
     image: rabbitmq:3-management

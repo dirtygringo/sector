@@ -48,6 +48,7 @@ namespace NM.Sector.Services.Identity
 
             services
                 .AddOptions()
+                .AddLogging()
                 .AddSingleton(_configuration)
                 .AddSingleton<IJsonWebTokenFactory, JsonWebTokenFactory>();
 
