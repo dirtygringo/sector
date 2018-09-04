@@ -1,14 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NM.Sector.Services.Identity.Contract.Commands;
+using NM.Sector.Services.Identity.ViewModels;
 using NM.SharedKernel.Infrastructure.Bus;
 
 namespace NM.Sector.Services.Identity.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController : ControllerBase, IDisposable
     {
         #region Fields
 
@@ -27,36 +28,31 @@ namespace NM.Sector.Services.Identity.Controllers
 
         #region Actions
 
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Authenticate([FromBody] LoginViewModel viewModel)
         {
-            return new string[] { "value1", "value2" };
-        }
+            //if (!ModelState.IsValid) return BadRequest((ModelState.Errors()));
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/account/string
-        [HttpPost]
-        public async Task<IActionResult> Register([FromBody] string value)
-        {
-            await _bus.SendAsync(new CreateUser("Pera", "Lazic", "pera.lazic@gmail.com", "peralazic"));
             return Ok();
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterViewModel viewModel)
         {
+            //if (!ModelState.IsValid) return BadRequest(ModelState.Errors());
+
+            await _bus.SendAsync(new CreateUser(viewModel.FirstName, viewModel.LastName, viewModel.Email, viewModel.Password));
+
+            return Accepted();
         }
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        #endregion
+
+        #region Disposing
+
+        public void Dispose()
         {
+            _bus?.Dispose();
         }
 
         #endregion
