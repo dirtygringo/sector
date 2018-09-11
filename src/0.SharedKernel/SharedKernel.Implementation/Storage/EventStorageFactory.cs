@@ -1,7 +1,7 @@
 ﻿using System;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 
-namespace NM.SharedKernel.Implementation.Storages
+namespace NM.SharedKernel.Implementation.Storage
 {
     internal class EventStorageFactory<TEventSourced> : IEventStorageFactory<TEventSourced> where TEventSourced : class, IEventSourced
     {

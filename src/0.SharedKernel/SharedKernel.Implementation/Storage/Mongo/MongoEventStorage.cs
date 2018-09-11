@@ -9,7 +9,7 @@ using NM.SharedKernel.Infrastructure.Bus;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Messages;
 
-namespace NM.SharedKernel.Implementation.Storages.Mongo
+namespace NM.SharedKernel.Implementation.Storage.Mongo
 {
     internal class MongoEventStorage<TEventSourced> : IEventStorage<TEventSourced> where TEventSourced : class, IEventSourced
     {

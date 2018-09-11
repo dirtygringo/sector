@@ -1,4 +1,4 @@
-﻿namespace NM.SharedKernel.Implementation.Storages.Mongo
+﻿namespace NM.SharedKernel.Implementation.Storage.Mongo
 {
     internal class MongoOptions
     {

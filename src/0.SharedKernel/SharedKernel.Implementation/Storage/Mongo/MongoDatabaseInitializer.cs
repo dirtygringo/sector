@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Conventions;
 
-namespace NM.SharedKernel.Implementation.Storages.Mongo
+namespace NM.SharedKernel.Implementation.Storage.Mongo
 {
     internal class MongoDatabaseInitializer : IDatabaseInitializer
     {

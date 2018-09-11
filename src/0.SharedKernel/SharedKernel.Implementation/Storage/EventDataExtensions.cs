@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using NM.SharedKernel.Infrastructure.EventSourcing;
 using NM.SharedKernel.Infrastructure.Messages;
 
-namespace NM.SharedKernel.Implementation.Storages
+namespace NM.SharedKernel.Implementation.Storage
 {
     internal static class EventDataExtensions
     {

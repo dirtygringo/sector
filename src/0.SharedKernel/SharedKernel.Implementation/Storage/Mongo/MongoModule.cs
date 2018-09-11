@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
-namespace NM.SharedKernel.Implementation.Storages.Mongo
+namespace NM.SharedKernel.Implementation.Storage.Mongo
 {
     public static class MongoModule
     {

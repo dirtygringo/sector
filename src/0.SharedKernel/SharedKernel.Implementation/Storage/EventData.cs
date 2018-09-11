@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NM.SharedKernel.Implementation.Storages
+namespace NM.SharedKernel.Implementation.Storage
 { 
     internal class EventData
     {
