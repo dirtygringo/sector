@@ -11,13 +11,11 @@ services:
       - ASPNETCORE_URLS=http://+:59647
 #     - ASPNETCORE_URLS=https://+:44364;http://+:59647
 #      - ASPNETCORE_HTTPS_PORT=44364
-
     container_name: sector.identity
     restart: always
     ports:
       - "59647:59647"
 #     - "44364:44364"
-
     networks:
       sector.network:
         aliases:
