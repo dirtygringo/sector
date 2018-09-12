@@ -1,7 +1,7 @@
 ﻿using System;
 using NM.SharedKernel.Core.Query;
 
-namespace NM.Sector.Services.Identity.Contract.Model
+namespace NM.Sector.Services.Identity.ViewModels.QueryModels
 {
     public class UserReadOnly : IQueryEntity
     {
