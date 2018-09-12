@@ -29,7 +29,7 @@ namespace NM.Sector.Services.Identity.Handlers.Command
 
         #region Methods
 
-        public Task Handle(CreateUser args)
+        public Task HandleAsync(CreateUser args)
         {
             try
             {

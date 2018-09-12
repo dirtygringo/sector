@@ -7,7 +7,7 @@ namespace NM.Sector.Services.Identity.Handlers.Event
 {
     internal sealed class UserCreatedHandler : IMessageHandler<UserCreated>
     {
-        public Task Handle(UserCreated message)
+        public Task HandleAsync(UserCreated message)
         {
             throw new NotImplementedException();
         }

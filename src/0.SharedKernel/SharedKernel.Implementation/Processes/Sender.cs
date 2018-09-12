@@ -34,7 +34,7 @@ namespace NM.SharedKernel.Implementation.Processes
             if(handlers.Length > 1) throw new ApplicationException("Cannot have more than one command handler per command.");
             if(handlers.Length == default) throw new ApplicationException($"No command handler has been registered for {nameof(TCommand)}.");
 
-            return handlers.Single().Handle(command);
+            return handlers.Single().HandleAsync(command);
         }
 
         #endregion

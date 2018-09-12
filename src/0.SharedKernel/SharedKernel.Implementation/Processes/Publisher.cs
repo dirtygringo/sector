@@ -31,7 +31,7 @@ namespace NM.SharedKernel.Implementation.Processes
             if(@event == null) throw new ArgumentException("Event cannot be null.");
 
             return Task.WhenAll(_serviceProvider.GetServices<IMessageHandler<TEvent>>().AsParallel()
-                .Select(handlers => handlers.Handle(@event)));
+                .Select(handlers => handlers.HandleAsync(@event)));
         }
 
         #endregion

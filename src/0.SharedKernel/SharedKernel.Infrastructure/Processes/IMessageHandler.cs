@@ -5,6 +5,6 @@ namespace NM.SharedKernel.Infrastructure.Processes
 {
     public interface IMessageHandler<in TMessage> where TMessage : class, IMessage
     {
-        Task Handle(TMessage args);
+        Task HandleAsync(TMessage args);
     }
 }
