@@ -1,7 +1,7 @@
 ﻿namespace NM.SharedKernel.Infrastructure.Storage
 {
-    public interface IStorageFactory<out T> where T : IStorage
+    public interface IStorageFactory<out TStorage> where TStorage : IStorage
     {
-        T Storage { get; }
+        TStorage Storage { get; }
     }
 }
