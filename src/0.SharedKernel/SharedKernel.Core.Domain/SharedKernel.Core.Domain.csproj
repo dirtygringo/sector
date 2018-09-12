@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>NM.SharedKernel.Core.Domain</AssemblyName>
+    <RootNamespace>NM.SharedKernel.Core.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
