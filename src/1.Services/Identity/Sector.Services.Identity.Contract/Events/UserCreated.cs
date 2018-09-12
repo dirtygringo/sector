@@ -1,5 +1,5 @@
 ﻿using System;
-using NM.SharedKernel.Infrastructure.Messages;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.Sector.Services.Identity.Contract.Events
 {

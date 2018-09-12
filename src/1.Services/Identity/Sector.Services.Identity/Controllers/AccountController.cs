@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NM.Sector.Services.Identity.Contract.Commands;
 using NM.Sector.Services.Identity.ViewModels;
-using NM.SharedKernel.Infrastructure.Bus;
+using NM.SharedKernel.Core.Bus;
 
 namespace NM.Sector.Services.Identity.Controllers
 {

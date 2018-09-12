@@ -4,10 +4,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>NM.Sector.Services.Identity.Contract</AssemblyName>
     <RootNamespace>NM.Sector.Services.Identity.Contract</RootNamespace>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Infrastructure\SharedKernel.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core\SharedKernel.Core.csproj" />
   </ItemGroup>
 
 </Project>

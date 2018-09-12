@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using NM.Sector.Services.Identity.Contract.Events;
-using NM.SharedKernel.Infrastructure.Domain;
-using NM.SharedKernel.Infrastructure.Guards;
-using NM.SharedKernel.Infrastructure.Messages;
+using NM.SharedKernel.Core.Domain;
+using NM.SharedKernel.Core.Guards;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.Sector.Services.Identity.Domain
 {

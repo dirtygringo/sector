@@ -1,6 +1,6 @@
 ﻿using System;
-using NM.SharedKernel.Infrastructure.Helpers;
-using NM.SharedKernel.Infrastructure.Messages;
+using NM.SharedKernel.Core.Helpers;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.Sector.Services.Identity.Contract.Commands
 {

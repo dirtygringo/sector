@@ -14,11 +14,11 @@ using NM.Sector.Services.Identity.Handlers.Command;
 using NM.Sector.Services.Identity.Handlers.Event;
 using NM.Sector.Services.Identity.Security.Policy;
 using NM.Sector.Services.Identity.Security.Token;
-using NM.SharedKernel.Common.Claims;
-using NM.SharedKernel.Implementation;
-using NM.SharedKernel.Implementation.Bus.RabbitMq;
-using NM.SharedKernel.Implementation.Storage.Mongo;
-using NM.SharedKernel.Infrastructure.Processes;
+using NM.SharedKernel.Security.Claims;
+using NM.SharedKernel.Core.Processes;
+using NM.SharedKernel.Core.Infrastructure.Bus.RabbitMq;
+using NM.SharedKernel.Core.Infrastructure.Storage.Mongo;
+using SharedKernel.Core.Domain;
 
 namespace NM.Sector.Services.Identity
 {
@@ -130,7 +130,7 @@ namespace NM.Sector.Services.Identity
                 });
 
             services
-                .AddInfrastructure()
+                .AddCoreDomain()
                 .AddRabbitMq(_configuration)
                 .AddMongoDb(_configuration);
 

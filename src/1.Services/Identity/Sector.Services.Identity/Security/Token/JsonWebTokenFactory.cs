@@ -5,8 +5,8 @@ using System.Security.Claims;
 using System.Security.Principal;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using NM.SharedKernel.Common.Claims;
-using NM.SharedKernel.Infrastructure.Guards;
+using NM.SharedKernel.Security.Claims;
+using NM.SharedKernel.Core.Guards;
 
 namespace NM.Sector.Services.Identity.Security.Token
 {

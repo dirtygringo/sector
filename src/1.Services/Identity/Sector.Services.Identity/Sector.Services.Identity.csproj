@@ -7,6 +7,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <UserSecretsId>006b34e0-a673-4a07-b2d0-a0213ec9d104</UserSecretsId>
     <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,9 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Common\SharedKernel.Common.csproj" />
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Implementation\SharedKernel.Implementation.csproj" />
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Infrastructure\SharedKernel.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core.Domain\SharedKernel.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core.Infrastructure\SharedKernel.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core\SharedKernel.Core.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Security\SharedKernel.Security.csproj" />
     <ProjectReference Include="..\Sector.Services.Identity.Contract\Sector.Services.Identity.Contract.csproj" />
   </ItemGroup>
 
