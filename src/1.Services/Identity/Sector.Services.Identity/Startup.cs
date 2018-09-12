@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using NM.Sector.Services.Identity.Contract.Commands;
 using NM.Sector.Services.Identity.Contract.Events;
 using NM.Sector.Services.Identity.Handlers.Command;
 using NM.Sector.Services.Identity.Handlers.Event;
@@ -19,6 +18,7 @@ using NM.SharedKernel.Core.Processes;
 using NM.SharedKernel.Core.Infrastructure.Bus.RabbitMq;
 using NM.SharedKernel.Core.Infrastructure.Storage.Mongo;
 using SharedKernel.Core.Domain;
+using NM.Sector.Services.Identity.Commands;
 
 namespace NM.Sector.Services.Identity
 {

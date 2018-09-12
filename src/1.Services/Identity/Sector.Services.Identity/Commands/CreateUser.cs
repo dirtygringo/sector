@@ -2,9 +2,9 @@
 using NM.SharedKernel.Core.Helpers;
 using NM.SharedKernel.Core.Messages;
 
-namespace NM.Sector.Services.Identity.Contract.Commands
+namespace NM.Sector.Services.Identity.Commands
 {
-    public class CreateUser : ICommand
+    internal class CreateUser : ICommand
     {
         public CreateUser(string firstName, string lastName, string email, string password)
         {

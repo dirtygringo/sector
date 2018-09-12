@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NM.Sector.Services.Identity.Contract.Commands;
 using NM.Sector.Services.Identity.ViewModels;
 using NM.SharedKernel.Core.Bus;
+using NM.Sector.Services.Identity.Commands;
 
 namespace NM.Sector.Services.Identity.Controllers
 {
