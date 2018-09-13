@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sector.Services.Identity", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sector.Services.Identity.Contract", "src\1.Services\Identity\Sector.Services.Identity.Contract\Sector.Services.Identity.Contract.csproj", "{CC845099-6BEC-459C-B12A-8046E2F482D7}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{05305A1A-BC2B-4E5F-A051-CBBE50DEDCE8}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker\docker-compose.dcproj", "{05305A1A-BC2B-4E5F-A051-CBBE50DEDCE8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel.Security", "src\0.SharedKernel\SharedKernel.Security\SharedKernel.Security.csproj", "{9A6F5E52-BD18-4D49-9EDC-4B062C0DA1A0}"
 EndProject
