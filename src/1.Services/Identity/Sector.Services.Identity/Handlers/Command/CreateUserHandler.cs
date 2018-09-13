@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NM.Sector.Services.Identity.Domain;
-using NM.SharedKernel.Core.Domain;
-using NM.SharedKernel.Core.Processes;
-using CreateUser = NM.Sector.Services.Identity.Commands.CreateUser;
+using NM.SharedKernel.Core.Abstraction.Domain;
+using NM.SharedKernel.Core.Abstraction.Processes;
+using NM.Sector.Services.Identity.Commands;
 
 namespace NM.Sector.Services.Identity.Handlers.Command
 {

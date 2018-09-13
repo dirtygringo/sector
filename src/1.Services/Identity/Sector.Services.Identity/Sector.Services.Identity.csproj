@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core.Domain\SharedKernel.Core.Domain.csproj" />
-    <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core.Infrastructure\SharedKernel.Core.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\Infrastructure\ServiceBus\ServiceBus.RabbitMq\ServiceBus.RabbitMq.csproj" />
+    <ProjectReference Include="..\..\..\0.SharedKernel\Infrastructure\Storage\Storage.MongoDb\Storage.MongoDb.csproj" />
     <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Core\SharedKernel.Core.csproj" />
     <ProjectReference Include="..\..\..\0.SharedKernel\SharedKernel.Security\SharedKernel.Security.csproj" />
     <ProjectReference Include="..\Sector.Services.Identity.Contract\Sector.Services.Identity.Contract.csproj" />

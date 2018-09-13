@@ -17,13 +17,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sector.Services.Identity.Co
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{05305A1A-BC2B-4E5F-A051-CBBE50DEDCE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Security", "src\0.SharedKernel\SharedKernel.Security\SharedKernel.Security.csproj", "{9A6F5E52-BD18-4D49-9EDC-4B062C0DA1A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel.Security", "src\0.SharedKernel\SharedKernel.Security\SharedKernel.Security.csproj", "{9A6F5E52-BD18-4D49-9EDC-4B062C0DA1A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Core", "src\0.SharedKernel\SharedKernel.Core\SharedKernel.Core.csproj", "{29B5EA43-B799-4184-897A-AD0C2D3770C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedKernel.Core", "src\0.SharedKernel\SharedKernel.Core\SharedKernel.Core.csproj", "{29B5EA43-B799-4184-897A-AD0C2D3770C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Core.Infrastructure", "src\0.SharedKernel\SharedKernel.Core.Infrastructure\SharedKernel.Core.Infrastructure.csproj", "{7BA23CFB-D5D0-4692-94D0-65B61DD278E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Core.Abstraction", "src\0.SharedKernel\SharedKernel.Core.Abstraction\SharedKernel.Core.Abstraction.csproj", "{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel.Core.Domain", "src\0.SharedKernel\SharedKernel.Core.Domain\SharedKernel.Core.Domain.csproj", "{1464E1E4-324C-47DE-86D3-620EB7B6CA36}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBus", "ServiceBus", "{B2CC5639-04E0-4869-8581-04DB267FE3D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceBus.RabbitMq", "src\0.SharedKernel\Infrastructure\ServiceBus\ServiceBus.RabbitMq\ServiceBus.RabbitMq.csproj", "{DDE7C657-7110-4693-B7C6-0B78111FD2DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Storage", "Storage", "{AF086C1D-5228-4789-9540-75D5168EFC36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage.MongoDb", "src\0.SharedKernel\Infrastructure\Storage\Storage.MongoDb\Storage.MongoDb.csproj", "{437675A5-509D-440A-8988-4FFFB9630C3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E5C7BA2F-D7AF-4327-AF0F-82B4C57561E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,14 +59,18 @@ Global
 		{29B5EA43-B799-4184-897A-AD0C2D3770C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29B5EA43-B799-4184-897A-AD0C2D3770C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29B5EA43-B799-4184-897A-AD0C2D3770C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7BA23CFB-D5D0-4692-94D0-65B61DD278E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BA23CFB-D5D0-4692-94D0-65B61DD278E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BA23CFB-D5D0-4692-94D0-65B61DD278E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BA23CFB-D5D0-4692-94D0-65B61DD278E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1464E1E4-324C-47DE-86D3-620EB7B6CA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1464E1E4-324C-47DE-86D3-620EB7B6CA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1464E1E4-324C-47DE-86D3-620EB7B6CA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1464E1E4-324C-47DE-86D3-620EB7B6CA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE7C657-7110-4693-B7C6-0B78111FD2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE7C657-7110-4693-B7C6-0B78111FD2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE7C657-7110-4693-B7C6-0B78111FD2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE7C657-7110-4693-B7C6-0B78111FD2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{437675A5-509D-440A-8988-4FFFB9630C3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{437675A5-509D-440A-8988-4FFFB9630C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{437675A5-509D-440A-8988-4FFFB9630C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{437675A5-509D-440A-8988-4FFFB9630C3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,8 +81,12 @@ Global
 		{CC845099-6BEC-459C-B12A-8046E2F482D7} = {6858B1F5-3330-4363-83FA-2A914285B7A0}
 		{9A6F5E52-BD18-4D49-9EDC-4B062C0DA1A0} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
 		{29B5EA43-B799-4184-897A-AD0C2D3770C8} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
-		{7BA23CFB-D5D0-4692-94D0-65B61DD278E9} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
-		{1464E1E4-324C-47DE-86D3-620EB7B6CA36} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
+		{C5801D29-D2FD-4DFA-9EE1-422E8E16D2C2} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
+		{B2CC5639-04E0-4869-8581-04DB267FE3D6} = {E5C7BA2F-D7AF-4327-AF0F-82B4C57561E2}
+		{DDE7C657-7110-4693-B7C6-0B78111FD2DE} = {B2CC5639-04E0-4869-8581-04DB267FE3D6}
+		{AF086C1D-5228-4789-9540-75D5168EFC36} = {E5C7BA2F-D7AF-4327-AF0F-82B4C57561E2}
+		{437675A5-509D-440A-8988-4FFFB9630C3F} = {AF086C1D-5228-4789-9540-75D5168EFC36}
+		{E5C7BA2F-D7AF-4327-AF0F-82B4C57561E2} = {2664593C-0663-4F5F-84AA-B83A3D4324AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31DF1B18-28B0-4F6F-8120-EA4BC8AF9D20}

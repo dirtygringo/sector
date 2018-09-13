@@ -1,5 +1,5 @@
 ﻿using System;
-using NM.SharedKernel.Core.Query;
+using NM.SharedKernel.Core.Abstraction.Query;
 
 namespace NM.Sector.Services.Identity.ViewModels.QueryModels
 {
