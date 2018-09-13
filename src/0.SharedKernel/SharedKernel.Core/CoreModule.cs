@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using NM.SharedKernel.Core.Abstraction.Domain;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Processes;
 using NM.SharedKernel.Core.Abstraction.Query;
+using NM.SharedKernel.Core.Abstraction.Workers;
 using NM.SharedKernel.Core.Factory;
 using NM.SharedKernel.Core.Processes;
 

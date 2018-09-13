@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using NM.SharedKernel.Core.Abstraction.Domain;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
 using NM.SharedKernel.Core.Abstraction.Exceptions;
-using NM.SharedKernel.Core.Abstraction.Helpers;
+using NM.SharedKernel.Core.Helpers;
 
 namespace NM.SharedKernel.Core
 {

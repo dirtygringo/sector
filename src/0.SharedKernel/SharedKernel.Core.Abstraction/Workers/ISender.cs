@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using NM.SharedKernel.Core.Abstraction.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.Processes
+namespace NM.SharedKernel.Core.Abstraction.Workers
 {
     public interface ISender
     {

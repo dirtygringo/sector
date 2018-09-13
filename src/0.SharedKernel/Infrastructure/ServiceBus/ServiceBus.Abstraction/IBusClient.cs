@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using NM.SharedKernel.Core.Abstraction.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.Bus
+namespace NM.ServiceBus.Abstraction
 {
     public interface IBusClient : IDisposable
     {

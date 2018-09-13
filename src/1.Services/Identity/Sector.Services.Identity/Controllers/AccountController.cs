@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NM.Sector.Services.Identity.ViewModels;
 using NM.Sector.Services.Identity.Commands;
-using NM.SharedKernel.Core.Abstraction.Bus;
+using NM.ServiceBus.Abstraction;
 
 namespace NM.Sector.Services.Identity.Controllers
 {

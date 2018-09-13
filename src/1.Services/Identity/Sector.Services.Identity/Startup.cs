@@ -17,7 +17,7 @@ using NM.SharedKernel.Security.Claims;
 using NM.Sector.Services.Identity.Commands;
 using NM.ServiceBus.RabbitMq;
 using NM.SharedKernel.Core;
-using NM.SharedKernel.Core.Abstraction.Processes;
+using NM.SharedKernel.Core.Abstraction.Workers;
 using NM.Storage.MongoDb;
 
 namespace NM.Sector.Services.Identity

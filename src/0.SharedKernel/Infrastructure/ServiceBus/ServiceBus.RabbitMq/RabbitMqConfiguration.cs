@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using EasyNetQ;
 using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.Abstraction.Bus;
+using NM.ServiceBus.Abstraction;
 using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Processes;
+using NM.SharedKernel.Core.Abstraction.Workers;
 
 namespace NM.ServiceBus.RabbitMq
 {

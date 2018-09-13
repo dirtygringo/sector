@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\SharedKernel.Core.Abstraction\SharedKernel.Core.Abstraction.csproj" />
+    <ProjectReference Include="..\ServiceBus.Abstraction\ServiceBus.Abstraction.csproj" />
   </ItemGroup>
 
 </Project>

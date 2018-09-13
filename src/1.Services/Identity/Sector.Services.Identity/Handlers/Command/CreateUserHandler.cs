@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NM.Sector.Services.Identity.Domain;
 using NM.SharedKernel.Core.Abstraction.Domain;
-using NM.SharedKernel.Core.Abstraction.Processes;
 using NM.Sector.Services.Identity.Commands;
+using NM.SharedKernel.Core.Abstraction.Workers;
 
 namespace NM.Sector.Services.Identity.Handlers.Command
 {

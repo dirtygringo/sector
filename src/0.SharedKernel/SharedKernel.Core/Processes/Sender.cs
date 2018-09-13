@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Processes;
+using NM.SharedKernel.Core.Abstraction.Workers;
 
 namespace NM.SharedKernel.Core.Processes
 {

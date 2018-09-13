@@ -1,5 +1,5 @@
 ﻿using System;
-using NM.SharedKernel.Core.Abstraction.Bus;
+using NM.ServiceBus.Abstraction;
 
 namespace NM.ServiceBus.RabbitMq
 {
