@@ -3,8 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
+using NM.Storage.Abstraction.Event;
+using NM.Storage.Abstraction.Query;
 using NM.Storage.MongoDb.Abstraction;
+using NM.Storage.MongoDb.Factory;
 
 namespace NM.Storage.MongoDb
 {
@@ -35,6 +37,8 @@ namespace NM.Storage.MongoDb
             services
                 .AddTransient<IDatabaseInitializer, MongoDatabaseInitializer>()
                 .AddTransient<IDatabaseSeeder,MongoDatabaseSeeder>()
+                .AddSingleton(typeof(IEventStorageFactory<>), typeof(EventStorageFactory<>))
+                .AddSingleton(typeof(IQueryStorageFactory<>), typeof(QueryStorageFactory<>))
                 .AddTransient(typeof(IEventStorage<>), typeof(MongoEventStorage<>));
 
             return services;

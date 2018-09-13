@@ -8,6 +8,7 @@ using MongoDB.Driver.Linq;
 using NM.ServiceBus.Abstraction;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
 using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.Storage.Abstraction.Event;
 using NM.Storage.MongoDb.Format;
 
 namespace NM.Storage.MongoDb

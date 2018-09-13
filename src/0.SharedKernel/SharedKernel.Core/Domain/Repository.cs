@@ -5,8 +5,9 @@ using NM.SharedKernel.Core.Abstraction.Domain;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
 using NM.SharedKernel.Core.Abstraction.Exceptions;
 using NM.SharedKernel.Core.Helpers;
+using NM.Storage.Abstraction.Event;
 
-namespace NM.SharedKernel.Core
+namespace NM.SharedKernel.Core.Domain
 {
     internal class Repository<TAggregateRoot> : IRepository<TAggregateRoot> where TAggregateRoot : AggregateRoot, IEventSourced
     {

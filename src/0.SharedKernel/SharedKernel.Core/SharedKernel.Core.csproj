@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Storage\Storage.Abstraction\Storage.Abstraction.csproj" />
     <ProjectReference Include="..\SharedKernel.Core.Abstraction\SharedKernel.Core.Abstraction.csproj" />
   </ItemGroup>
 

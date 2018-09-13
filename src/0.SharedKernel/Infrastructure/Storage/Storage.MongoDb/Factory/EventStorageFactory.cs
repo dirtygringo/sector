@@ -1,7 +1,8 @@
 ﻿using System;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
+using NM.Storage.Abstraction.Event;
 
-namespace NM.SharedKernel.Core.Factory
+namespace NM.Storage.MongoDb.Factory
 {
     internal class EventStorageFactory<TEventSourced> : IEventStorageFactory<TEventSourced> where TEventSourced : class, IEventSourced
     {

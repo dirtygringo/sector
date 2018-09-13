@@ -1,6 +1,6 @@
-﻿using NM.SharedKernel.Core.Abstraction.Storage;
+﻿using NM.SharedKernel.Core.Abstraction.Query;
 
-namespace NM.SharedKernel.Core.Abstraction.Query
+namespace NM.Storage.Abstraction.Query
 {
     public interface IQueryStorageFactory<TReadEntity> : IStorageFactory<IQueryStorage<TReadEntity>> where TReadEntity : class, IQueryEntity { }
 }

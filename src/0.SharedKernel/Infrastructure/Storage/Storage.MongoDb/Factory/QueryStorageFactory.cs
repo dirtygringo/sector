@@ -1,7 +1,8 @@
 ﻿using System;
 using NM.SharedKernel.Core.Abstraction.Query;
+using NM.Storage.Abstraction.Query;
 
-namespace NM.SharedKernel.Core.Factory
+namespace NM.Storage.MongoDb.Factory
 {
     internal class QueryStorageFactory<TQueryEntity> : IQueryStorageFactory<TQueryEntity> where TQueryEntity : class, IQueryEntity
     {

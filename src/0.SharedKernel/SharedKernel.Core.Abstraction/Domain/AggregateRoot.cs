@@ -30,7 +30,7 @@ namespace NM.SharedKernel.Core.Abstraction.Domain
         #endregion
 
         #region Properties
-        public Guid Id { get; private set; }
+        public Guid Id { get; }
         public int Version { get; private set; } = -1;
         public IEnumerable<IDomainEvent> UncomittedChanges => _changes;
 

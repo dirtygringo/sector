@@ -1,4 +1,4 @@
-﻿namespace NM.SharedKernel.Core.Abstraction.Storage
+﻿namespace NM.Storage.Abstraction
 {
     public interface IStorageFactory<out TStorage> where TStorage : IStorage
     {
