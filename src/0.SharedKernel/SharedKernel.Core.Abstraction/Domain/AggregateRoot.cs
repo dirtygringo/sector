@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
+using NM.SharedKernel.Core.Abstraction.Guards;
 using NM.SharedKernel.Core.Abstraction.Messages;
 
 namespace NM.SharedKernel.Core.Abstraction.Domain
@@ -19,6 +20,8 @@ namespace NM.SharedKernel.Core.Abstraction.Domain
 
         protected AggregateRoot(Guid id)
         {
+            Preconditions.CheckNullOrEmpty(id, nameof(id));
+
             Id = id;
             _handlers = new Dictionary<Type, Action<IDomainEvent>>();
             _changes = new List<IDomainEvent>();

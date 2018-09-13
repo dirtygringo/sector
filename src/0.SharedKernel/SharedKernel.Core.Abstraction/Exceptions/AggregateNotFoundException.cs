@@ -7,6 +7,6 @@ namespace NM.SharedKernel.Core.Abstraction.Exceptions
     {
         public AggregateNotFoundException() : base() { }
         public AggregateNotFoundException(string message) : base(message) { }
-        public AggregateNotFoundException(string message, params object[] args) : base(String.Format(CultureInfo.CurrentCulture, message, args)) { }
+        public AggregateNotFoundException(string message, params object[] args) : base(string.Format(CultureInfo.CurrentCulture, message, args)) { }
     }
 }
