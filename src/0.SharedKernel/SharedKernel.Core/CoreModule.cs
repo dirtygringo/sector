@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using NM.SharedKernel.Core.Abstraction.Domain;
 using NM.SharedKernel.Core.Abstraction.EventSourcing;
 using NM.SharedKernel.Core.Abstraction.Processes;
@@ -10,7 +11,7 @@ namespace NM.SharedKernel.Core
 {
     public static class CoreModule
     {
-        public static IServiceCollection AddCore(this IServiceCollection services)
+        public static IServiceCollection AddCore(this IServiceCollection services, Action<IServiceCollection> registerDependency)
         {
             services
                 .AddSingleton<IPublisher, Publisher>()
@@ -18,6 +19,8 @@ namespace NM.SharedKernel.Core
                 .AddSingleton(typeof(IEventStorageFactory<>), typeof(EventStorageFactory<>))
                 .AddSingleton(typeof(IQueryStorageFactory<>), typeof(QueryStorageFactory<>))
                 .AddTransient(typeof(IRepository<>), typeof(Repository<>));
+
+            registerDependency?.Invoke(services);
 
             return services;
         }

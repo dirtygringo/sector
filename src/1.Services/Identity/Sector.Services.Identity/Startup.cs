@@ -130,9 +130,11 @@ namespace NM.Sector.Services.Identity
                 });
 
             services
-                .AddCore()
-                .AddRabbitMq(_configuration)
-                .AddMongoDb(_configuration);
+                .AddCore(dependency =>
+                {
+                    dependency.AddRabbitMq(_configuration);
+                    dependency.AddMongoDb(_configuration);
+                });
 
             services.AddTransient<IMessageHandler<CreateUser>, CreateUserHandler>();
             services.AddTransient<IMessageHandler<UserCreated>, UserCreatedHandler>();

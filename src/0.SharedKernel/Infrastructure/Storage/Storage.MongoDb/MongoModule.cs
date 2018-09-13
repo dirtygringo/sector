@@ -34,6 +34,7 @@ namespace NM.Storage.MongoDb
             });
             services
                 .AddTransient<IDatabaseInitializer, MongoDatabaseInitializer>()
+                .AddTransient<IDatabaseSeeder,MongoDatabaseSeeder>()
                 .AddTransient(typeof(IEventStorage<>), typeof(MongoEventStorage<>));
 
             return services;
