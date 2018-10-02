@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
 
-namespace NM.SharedKernel.Core.Helpers
+namespace NM.SharedKernel.Core.Abstraction.Helpers
 {
-    internal class ConstructorInitializer
+    public class ConstructorInitializer
     {
         public static T Construct<T>(Type[] paramType, object[] paramValues)
         {
