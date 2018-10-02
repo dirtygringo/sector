@@ -72,17 +72,17 @@ namespace NM.Sector.Services.Identity
                 {
                     options.AddPolicy(IdentityPolicy.ApiUser, policy =>
                     {
-                        policy.RequireClaim(CustomClaimTypes.Id);
-                        policy.RequireClaim(CustomClaimTypes.Email);
-                        policy.RequireClaim(CustomClaimTypes.ApiAccess, apiAccessKey);
+                        policy.RequireClaim(SectorClaimTypes.Id);
+                        policy.RequireClaim(SectorClaimTypes.Email);
+                        policy.RequireClaim(SectorClaimTypes.ApiAccess, apiAccessKey);
                     });
 
                     options.AddPolicy(IdentityPolicy.Admin, policy =>
                     {
-                        policy.RequireClaim(CustomClaimTypes.Id);
-                        policy.RequireClaim(CustomClaimTypes.Email);
-                        policy.RequireClaim(CustomClaimTypes.ApiAccess, apiAccessKey);
-                        policy.RequireClaim(CustomClaimTypes.AdminAccess);
+                        policy.RequireClaim(SectorClaimTypes.Id);
+                        policy.RequireClaim(SectorClaimTypes.Email);
+                        policy.RequireClaim(SectorClaimTypes.ApiAccess, apiAccessKey);
+                        policy.RequireClaim(SectorClaimTypes.AdminAccess);
                     });
                 })
                 .AddAuthentication(auth =>

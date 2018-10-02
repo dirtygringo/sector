@@ -1,6 +1,6 @@
 ﻿namespace NM.Sector.Services.Security.Claims
 {
-    public static class CustomClaimTypes
+    public static class SectorClaimTypes
     {
         public const string Id = "http://nm.schemas.xmlsoap.org/ws/2018/02/identity/claims/id";
         public const string Email = "http://nm.schemas.xmlsoap.org/ws/2018/02/identity/claims/email";

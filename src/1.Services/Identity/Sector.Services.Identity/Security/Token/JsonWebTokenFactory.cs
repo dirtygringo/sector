@@ -34,7 +34,7 @@ namespace NM.Sector.Services.Identity.Security.Token
         {
             var token = new
             {
-                id = identity.Claims.Single(claim => claim.Type == CustomClaimTypes.Id).Value,
+                id = identity.Claims.Single(claim => claim.Type == SectorClaimTypes.Id).Value,
                 auth_token = GenerateEncodedToken(email, identity),
                 expires_in = (int)_tokenSettings.ValidFor.TotalSeconds
             };
@@ -48,8 +48,8 @@ namespace NM.Sector.Services.Identity.Security.Token
 
             return new ClaimsIdentity(new GenericIdentity(email, "Token"), new[]
             {
-                new Claim(CustomClaimTypes.Id, id.ToString()),
-                new Claim(CustomClaimTypes.ApiAccess, _tokenSettings.ApiAccessKey)
+                new Claim(SectorClaimTypes.Id, id.ToString()),
+                new Claim(SectorClaimTypes.ApiAccess, _tokenSettings.ApiAccessKey)
             });
         }
 
@@ -57,9 +57,9 @@ namespace NM.Sector.Services.Identity.Security.Token
         {
             var claims = new[]
             {
-                identity.FindFirst(CustomClaimTypes.Id),
-                identity.FindFirst(CustomClaimTypes.ApiAccess),
-                new Claim(CustomClaimTypes.Email, email),
+                identity.FindFirst(SectorClaimTypes.Id),
+                identity.FindFirst(SectorClaimTypes.ApiAccess),
+                new Claim(SectorClaimTypes.Email, email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_tokenSettings.IssuedAt).ToString(),
                     ClaimValueTypes.Integer64)
