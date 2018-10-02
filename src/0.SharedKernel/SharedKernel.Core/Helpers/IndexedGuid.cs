@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NM.SharedKernel.Core.Abstraction.Helpers
+namespace NM.SharedKernel.Core.Helpers
 {
     public static class IndexedGuid
     {

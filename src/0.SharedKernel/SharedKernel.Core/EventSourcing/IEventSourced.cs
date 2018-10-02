@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.EventSourcing
+namespace NM.SharedKernel.Core.EventSourcing
 {
     public interface IEventSourced
     {

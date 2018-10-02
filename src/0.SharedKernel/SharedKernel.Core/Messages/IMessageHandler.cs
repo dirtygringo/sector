@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NM.SharedKernel.Core.Abstraction.Messages
+namespace NM.SharedKernel.Core.Messages
 {
     public interface IMessageHandler<in TMessage> where TMessage : class, IMessage
     {

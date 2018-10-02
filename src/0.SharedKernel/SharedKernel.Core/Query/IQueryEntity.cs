@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NM.SharedKernel.Core.Abstraction.Query
+namespace NM.SharedKernel.Core.Query
 {
     public interface IQueryEntity
     {

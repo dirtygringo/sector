@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace NM.SharedKernel.Core.Abstraction.Exceptions
+namespace NM.SharedKernel.Core.Exceptions
 {
     public class AggregateNotFoundException : Exception
     {

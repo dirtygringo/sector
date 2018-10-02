@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Guards;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Guards;
+using NM.SharedKernel.Core.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.Domain
+namespace NM.SharedKernel.Core.Domain
 {
     public abstract class AggregateRoot : IEventSourced
     {

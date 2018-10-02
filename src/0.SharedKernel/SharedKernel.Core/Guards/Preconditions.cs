@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NM.SharedKernel.Core.Abstraction.Guards
+namespace NM.SharedKernel.Core.Guards
 {
     public class Preconditions
     {

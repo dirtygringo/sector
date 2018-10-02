@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>NM.SharedKernel.Core.Abstraction</AssemblyName>
-    <RootNamespace>NM.SharedKernel.Core.Abstraction</RootNamespace>
+    <AssemblyName>NM.SharedKernel.Core</AssemblyName>
+    <RootNamespace>NM.SharedKernel.Core</RootNamespace>
     <LangVersion>7.1</LangVersion>
   </PropertyGroup>
 

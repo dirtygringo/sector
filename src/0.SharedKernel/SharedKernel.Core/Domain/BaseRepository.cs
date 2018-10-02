@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Exceptions;
-using NM.SharedKernel.Core.Abstraction.Helpers;
-using NM.SharedKernel.Core.Abstraction.Storage.Event;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Exceptions;
+using NM.SharedKernel.Core.Helpers;
+using NM.SharedKernel.Core.Storage.Event;
 
-namespace NM.SharedKernel.Core.Abstraction.Domain
+namespace NM.SharedKernel.Core.Domain
 {
     public abstract class BaseRepository<TAggregateRoot> : IRepository<TAggregateRoot> where TAggregateRoot : AggregateRoot, IEventSourced
     {

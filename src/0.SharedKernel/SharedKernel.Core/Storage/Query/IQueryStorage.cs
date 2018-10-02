@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using NM.SharedKernel.Core.Abstraction.Query;
+using NM.SharedKernel.Core.Query;
 
-namespace NM.SharedKernel.Core.Abstraction.Storage.Query
+namespace NM.SharedKernel.Core.Storage.Query
 {
     public interface IQueryStorage<TQueryEntity> : IStorage where TQueryEntity : class, IQueryEntity
     {

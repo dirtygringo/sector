@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.Storage.Event
+namespace NM.SharedKernel.Core.Storage.Event
 {
     public interface IEventStorage<in TEventSourced> : IStorage where TEventSourced: IEventSourced
     {

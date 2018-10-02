@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace NM.SharedKernel.Core.Abstraction.Messages
+namespace NM.SharedKernel.Core.Messages
 {
     public interface IMessageClient : IDisposable
     {

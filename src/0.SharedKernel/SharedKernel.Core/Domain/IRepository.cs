@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace NM.SharedKernel.Core.Abstraction.Domain
+namespace NM.SharedKernel.Core.Domain
 {
     public interface IRepository<TAggregateRoot> where TAggregateRoot: AggregateRoot
     {

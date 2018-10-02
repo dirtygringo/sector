@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NM.SharedKernel.Core.Abstraction.Storage
+namespace NM.SharedKernel.Core.Storage
 {
     public interface IStorage : IDisposable { }
 }

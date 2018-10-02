@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.Messages;
 
-namespace NM.SharedKernel.Core.Abstraction.Workers
+namespace NM.SharedKernel.Core.Workers
 {
     public interface IPublisher
     {
