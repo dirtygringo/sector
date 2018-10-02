@@ -14,9 +14,11 @@ using NM.Sector.Services.Identity.Handlers.Event;
 using NM.Sector.Services.Identity.Security.Policy;
 using NM.Sector.Services.Identity.Security.Token;
 using NM.Sector.Services.Identity.Commands;
+using NM.Sector.Services.Identity.Domain;
 using NM.Sector.Services.Security.Claims;
 using NM.ServiceBus.RabbitMq;
-using NM.SharedKernel.Core;
+using NM.SharedKernel.Core.Abstraction.Domain;
+using NM.SharedKernel.Core.Abstraction.Messages;
 using NM.SharedKernel.Core.Abstraction.Workers;
 using NM.Storage.MongoDb;
 
@@ -130,12 +132,10 @@ namespace NM.Sector.Services.Identity
                 });
 
             services
-                .AddCore(dependency =>
-                {
-                    dependency.AddRabbitMq(_configuration);
-                    dependency.AddMongoDb(_configuration);
-                });
+                .AddRabbitMq(_configuration)
+                .AddMongoDb(_configuration);
 
+            services.AddTransient<IRepository<UserAggregate>, UserRepository>();
             services.AddTransient<IMessageHandler<CreateUser>, CreateUserHandler>();
             services.AddTransient<IMessageHandler<UserCreated>, UserCreatedHandler>();
         }

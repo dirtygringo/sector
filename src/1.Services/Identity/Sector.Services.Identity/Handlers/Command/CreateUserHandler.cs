@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using NM.Sector.Services.Identity.Domain;
 using NM.SharedKernel.Core.Abstraction.Domain;
 using NM.Sector.Services.Identity.Commands;
+using NM.SharedKernel.Core.Abstraction.Messages;
 using NM.SharedKernel.Core.Abstraction.Workers;
 
 namespace NM.Sector.Services.Identity.Handlers.Command

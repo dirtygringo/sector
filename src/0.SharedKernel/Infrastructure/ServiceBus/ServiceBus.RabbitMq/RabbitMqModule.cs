@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NM.ServiceBus.Abstraction;
+using NM.ServiceBus.RabbitMq.Infrastructure;
+using NM.ServiceBus.RabbitMq.Workers;
+using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.Abstraction.Workers;
 
 namespace NM.ServiceBus.RabbitMq
 {
@@ -25,14 +28,16 @@ namespace NM.ServiceBus.RabbitMq
                         rabbitMq.Password,
                         rabbitMq.RequestedHeartbeat,
                     register => { }))
-                .AddTransient<IBusClient, RabbitMqBus>()
-                .AddTransient<IBusConfiguration, RabbitMqConfiguration>()
+                .AddSingleton<IPublisher, Publisher>()
+                .AddSingleton<ISender, Sender>()
+                .AddTransient<IMessageClient, RabbitMqBus>()
+                .AddTransient<IMessageConfiguration, RabbitMqConfiguration>()
                 .AddSingleton<RabbitMqListener>();
 
             return services;
         }
 
-        public static IApplicationBuilder UseRabbitMq(this IApplicationBuilder app, Action<IBusConfiguration> config)
+        public static IApplicationBuilder UseRabbitMq(this IApplicationBuilder app, Action<IMessageConfiguration> config)
         {
             Listener = (RabbitMqListener)app.ApplicationServices.GetService(typeof(RabbitMqListener));
             var lifetime = (IApplicationLifetime)app.ApplicationServices.GetService(typeof(IApplicationLifetime));

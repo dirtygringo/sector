@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NM.Sector.Services.Identity.ViewModels;
 using NM.Sector.Services.Identity.Commands;
-using NM.ServiceBus.Abstraction;
+using NM.SharedKernel.Core.Abstraction.Messages;
 
 namespace NM.Sector.Services.Identity.Controllers
 {
@@ -13,13 +13,13 @@ namespace NM.Sector.Services.Identity.Controllers
     {
         #region Fields
 
-        private readonly IBusClient _bus;
+        private readonly IMessageClient _bus;
 
         #endregion
 
         #region Constructor
 
-        public AccountController(IBusClient bus)
+        public AccountController(IMessageClient bus)
         {
             _bus = bus;
         }

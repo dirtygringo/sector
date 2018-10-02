@@ -3,10 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using NM.Storage.Abstraction.Event;
-using NM.Storage.Abstraction.Query;
+using NM.SharedKernel.Core.Abstraction.Storage.Event;
+using NM.SharedKernel.Core.Abstraction.Storage.Query;
 using NM.Storage.MongoDb.Abstraction;
-using NM.Storage.MongoDb.Factory;
+using NM.Storage.MongoDb.Infrastructure;
+using NM.Storage.MongoDb.Infrastructure.Factory;
 
 namespace NM.Storage.MongoDb
 {
