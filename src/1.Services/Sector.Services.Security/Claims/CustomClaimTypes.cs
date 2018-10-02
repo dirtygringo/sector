@@ -1,4 +1,4 @@
-﻿namespace NM.SharedKernel.Security.Claims
+﻿namespace NM.Sector.Services.Security.Claims
 {
     public static class CustomClaimTypes
     {
