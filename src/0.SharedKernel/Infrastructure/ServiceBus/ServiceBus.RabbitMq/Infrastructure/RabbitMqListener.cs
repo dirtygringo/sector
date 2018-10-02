@@ -1,5 +1,5 @@
 ﻿using System;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.ServiceBus.RabbitMq.Infrastructure
 {

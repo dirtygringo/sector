@@ -1,6 +1,6 @@
 ﻿using System;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Storage.Event;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Storage.Event;
 
 namespace NM.Storage.MongoDb.Infrastructure.Factory
 {

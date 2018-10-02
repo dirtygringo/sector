@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using EasyNetQ;
 using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.ServiceBus.RabbitMq.Infrastructure
 {

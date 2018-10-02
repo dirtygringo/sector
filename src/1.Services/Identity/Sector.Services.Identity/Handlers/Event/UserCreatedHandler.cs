@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using NM.Sector.Services.Identity.Contract.Events;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Workers;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.Sector.Services.Identity.Handlers.Event
 {

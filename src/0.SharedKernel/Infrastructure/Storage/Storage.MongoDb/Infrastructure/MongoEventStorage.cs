@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Storage.Event;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Messages;
+using NM.SharedKernel.Core.Storage.Event;
 using NM.Storage.MongoDb.Format;
 
 namespace NM.Storage.MongoDb.Infrastructure

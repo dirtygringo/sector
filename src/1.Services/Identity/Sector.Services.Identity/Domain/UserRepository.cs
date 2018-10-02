@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.Abstraction.Domain;
-using NM.SharedKernel.Core.Abstraction.Storage.Event;
+using NM.SharedKernel.Core.Domain;
+using NM.SharedKernel.Core.Storage.Event;
 
 namespace NM.Sector.Services.Identity.Domain
 {

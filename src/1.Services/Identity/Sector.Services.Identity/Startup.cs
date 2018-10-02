@@ -17,9 +17,8 @@ using NM.Sector.Services.Identity.Commands;
 using NM.Sector.Services.Identity.Domain;
 using NM.Sector.Services.Security.Claims;
 using NM.ServiceBus.RabbitMq;
-using NM.SharedKernel.Core.Abstraction.Domain;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Workers;
+using NM.SharedKernel.Core.Domain;
+using NM.SharedKernel.Core.Messages;
 using NM.Storage.MongoDb;
 
 namespace NM.Sector.Services.Identity

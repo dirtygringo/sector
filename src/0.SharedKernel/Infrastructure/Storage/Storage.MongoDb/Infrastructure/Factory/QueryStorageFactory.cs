@@ -1,6 +1,6 @@
 ﻿using System;
-using NM.SharedKernel.Core.Abstraction.Query;
-using NM.SharedKernel.Core.Abstraction.Storage.Query;
+using NM.SharedKernel.Core.Query;
+using NM.SharedKernel.Core.Storage.Query;
 
 namespace NM.Storage.MongoDb.Infrastructure.Factory
 {

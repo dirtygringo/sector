@@ -6,7 +6,7 @@ using System.Security.Principal;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using NM.Sector.Services.Security.Claims;
-using NM.SharedKernel.Core.Abstraction.Guards;
+using NM.SharedKernel.Core.Guards;
 
 namespace NM.Sector.Services.Identity.Security.Token
 {

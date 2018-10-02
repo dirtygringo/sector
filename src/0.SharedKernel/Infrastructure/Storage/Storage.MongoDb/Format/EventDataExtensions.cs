@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using NM.SharedKernel.Core.Abstraction.EventSourcing;
-using NM.SharedKernel.Core.Abstraction.Messages;
+using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Messages;
 
 namespace NM.Storage.MongoDb.Format
 {

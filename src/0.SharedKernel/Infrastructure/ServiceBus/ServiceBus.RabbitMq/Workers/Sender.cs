@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Workers;
+using NM.SharedKernel.Core.Messages;
+using NM.SharedKernel.Core.Workers;
 
 namespace NM.ServiceBus.RabbitMq.Workers
 {

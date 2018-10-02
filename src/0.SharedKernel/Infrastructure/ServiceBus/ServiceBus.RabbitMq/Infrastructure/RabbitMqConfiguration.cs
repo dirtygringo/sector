@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using EasyNetQ;
 using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Workers;
+using NM.SharedKernel.Core.Messages;
+using NM.SharedKernel.Core.Workers;
 
 namespace NM.ServiceBus.RabbitMq.Infrastructure
 {

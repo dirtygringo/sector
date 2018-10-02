@@ -6,8 +6,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NM.ServiceBus.RabbitMq.Infrastructure;
 using NM.ServiceBus.RabbitMq.Workers;
-using NM.SharedKernel.Core.Abstraction.Messages;
-using NM.SharedKernel.Core.Abstraction.Workers;
+using NM.SharedKernel.Core.Messages;
+using NM.SharedKernel.Core.Workers;
 
 namespace NM.ServiceBus.RabbitMq
 {
