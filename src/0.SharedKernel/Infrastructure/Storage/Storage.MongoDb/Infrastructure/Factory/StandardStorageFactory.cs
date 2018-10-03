@@ -1,10 +1,10 @@
 ﻿using System;
-using NM.SharedKernel.Core.Query;
+using NM.SharedKernel.Core.Bindings;
 using NM.SharedKernel.Core.Storage.Standard;
 
 namespace NM.Storage.MongoDb.Infrastructure.Factory
 {
-    internal class StandardStorageFactory<TQueryEntity> : IStandardStorageFactory<TQueryEntity> where TQueryEntity : class, IQueryEntity
+    internal class StandardStorageFactory<TEntity> : IStandardStorageFactory<TEntity> where TEntity : class, IEntity
     {
         #region Fields
 
@@ -23,7 +23,7 @@ namespace NM.Storage.MongoDb.Infrastructure.Factory
 
         #region Properties
 
-        public IStandardStorage<TQueryEntity> Storage => (IStandardStorage<TQueryEntity>)_serviceProvider.GetService(typeof(IStandardStorage<TQueryEntity>));
+        public IStandardStorage<TEntity> Storage => (IStandardStorage<TEntity>)_serviceProvider.GetService(typeof(IStandardStorage<TEntity>));
 
         #endregion
     }

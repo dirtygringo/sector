@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Bindings;
 using NM.SharedKernel.Core.Messages;
 
 namespace NM.SharedKernel.Core.Storage.Event

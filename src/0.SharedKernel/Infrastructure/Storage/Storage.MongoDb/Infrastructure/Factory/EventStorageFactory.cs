@@ -1,5 +1,5 @@
 ﻿using System;
-using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Bindings;
 using NM.SharedKernel.Core.Storage.Event;
 
 namespace NM.Storage.MongoDb.Infrastructure.Factory

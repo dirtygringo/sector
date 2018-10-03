@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Bindings;
 using NM.SharedKernel.Core.Exceptions;
 using NM.SharedKernel.Core.Helpers;
 using NM.SharedKernel.Core.Storage.Event;

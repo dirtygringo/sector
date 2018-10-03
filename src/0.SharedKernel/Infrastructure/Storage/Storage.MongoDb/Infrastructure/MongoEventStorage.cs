@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
-using NM.SharedKernel.Core.EventSourcing;
+using NM.SharedKernel.Core.Bindings;
 using NM.SharedKernel.Core.Messages;
 using NM.SharedKernel.Core.Storage.Event;
 using NM.Storage.MongoDb.Format;

@@ -1,9 +1,9 @@
 ﻿using System;
-using NM.SharedKernel.Core.Query;
+using NM.SharedKernel.Core.Bindings;
 
 namespace NM.Sector.Services.Identity.ViewModels.QueryModels
 {
-    public class UserReadOnly : IQueryEntity
+    public class UserReadOnly : IEntity
     {
         private UserReadOnly(Guid id, string firstName, string lastName, string email, string passwordHash, string passwordSalt, DateTime createdAt)
         {

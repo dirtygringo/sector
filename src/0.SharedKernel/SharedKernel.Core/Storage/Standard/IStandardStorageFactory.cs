@@ -1,6 +1,6 @@
-﻿using NM.SharedKernel.Core.Query;
+﻿using NM.SharedKernel.Core.Bindings;
 
 namespace NM.SharedKernel.Core.Storage.Standard
 {
-    public interface IStandardStorageFactory<TReadEntity> : IStorageFactory<IStandardStorage<TReadEntity>> where TReadEntity : class, IQueryEntity { }
+    public interface IStandardStorageFactory<TEntity> : IStorageFactory<IStandardStorage<TEntity>> where TEntity : class, IEntity { }
 }
